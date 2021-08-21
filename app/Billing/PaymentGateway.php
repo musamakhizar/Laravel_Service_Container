@@ -2,6 +2,8 @@
 
 namespace App\Billing;
 
+use Illuminate\Support\Str;
+
 class PaymentGateway
 {
   public function charge($amount)
