@@ -27,3 +27,8 @@ The example involves an order and a payment gateway its a typical setup when eve
 - **3-**
 - **4-**
 - **5-**
+
+## Reflection Class
+
+Laravel implement the injection mechanism using a reflection  class basically the concept behind the refelction class is we can ask laravel to go ahead and inject this for us levels gonna use the reflection class and the basics behind reflection is that if you asked somebody to describe themselves they wouldn't be able to unless they had a mirror or a reflection of themselves they were looking at themselves they could tell you all about themselves but if they don't have a reflection then they don't know what they look like 
+so same thing for objects it takes an object and then it puts a mirror in front of it so that it can reflect on itself and conceptually speaking  it can tell you a lot about itself so using the reflection class in here we can simply type hint quote/unquote payment gateway.
