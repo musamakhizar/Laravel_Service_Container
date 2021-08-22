@@ -4,7 +4,7 @@ namespace App\Billing;
 
 use Illuminate\Support\Str;
 
-class PaymentGateway
+class BankPaymentGateway implements PaymentGatewayContract
 {
     private $currency;
     private $discount;
@@ -13,12 +13,12 @@ class PaymentGateway
         $this->currency = $currency;
         $this->discount = 0;
     }
-
+    //@override
     public function setDiscount($amount)
     {
         $this->discount = $amount;
     }
-
+    //@override 
     public function charge($amount)
     {
         //charge the bank
