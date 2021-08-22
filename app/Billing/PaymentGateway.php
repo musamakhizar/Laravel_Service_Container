@@ -6,13 +6,20 @@ use Illuminate\Support\Str;
 
 class PaymentGateway
 {
-  public function charge($amount)
-  {
-      //charge the bank
+    private $currency;
 
-      return [
-          'amount' => $amount,
-          'confirmation_number' => Str::random(),
-      ];
-  }  
+    public function __construct($currency)
+    {
+        $this->currency = $currency;
+    }
+    public function charge($amount)
+    {
+        //charge the bank
+
+        return [
+            'amount' => $amount,
+            'confirmation_number' => Str::random(),
+            'currency' => $this->currency,
+        ];
+    }  
 }
