@@ -17,8 +17,12 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(PaymentGatewayContract::class,function($app){
-            //return new BankPaymentGateway('usd');
-            return new CreditPaymentGateway('usd');
+            
+            if(request()->has('credit'))
+            {
+                return new CreditPaymentGateway('usd');
+            }
+            return new BankPaymentGateway('usd');
 
             //you can dynamicall chose which payment gateway you want to choose
         });
